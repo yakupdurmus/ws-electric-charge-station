@@ -45,7 +45,7 @@
     "sucrase": "^3.12.1",
     "typescript": "^3.9.3"
   },
-  "description": "Servidor do site oficial linke",
+  "description": "Vercel Typescript DDD api example",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hebertcisco/vercel-typescript-ddd-api.git"
