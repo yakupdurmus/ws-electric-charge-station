@@ -1,0 +1,8 @@
+{
+  "name": "vercel-typescript-ddd-api",
+  "description": "Servidor do site oficial linke",
+  "repository": "https://github.com/hebertcisco/vercel-typescript-ddd-api",
+  "keywords": [
+    "vercel-typescript-ddd-api"
+  ]
+}
