@@ -7,7 +7,6 @@ import morgan from 'morgan';
 
 import * as Mongo from './infra/database';
 
-
 import Routes from './routes';
 
 class App {

@@ -1,30 +1,22 @@
 import * as dotenv from 'dotenv';
-import url from 'url';
-import MongoClient from 'mongodb';
 
 dotenv.config();
-MongoClient.MongoClient;
 
-let cachedDb = null;
-async function connectToDatabase(uri) {
-  if (cachedDb) {
-    return cachedDb;
-  }
-  const client = await MongoClient.connect(uri, { useNewUrlParser: true });
-  const db = await client.db(url.parse(uri).pathname.substr(1));
-  cachedDb = db;
-  return db;
-}
+import mongoose from 'mongoose';
+mongoose.set('useFindAndModify', false);
+mongoose.set('useUnifiedTopology', true);
 
-export default (async () => {
-  const host = process.env.MONGODB_HOST;
-  const user = process.env.MONGODB_USER;
-  const pass = process.env.MONGODB_PASS;
-  const dba = process.env.MONGODB_DATABASE;
-  try {
-    await connectToDatabase(`mongodb+srv://${user}:${pass}@${host}/${dba}`);
-    console.log('Conected!');
-  } catch (err) {
-    console.log(err);
-  }
-})();
+const host = process.env.MONGODB_HOST;
+const user = process.env.MONGODB_USER;
+const pass = process.env.MONGODB_PASS;
+const db = process.env.MONGODB_DATABASE;
+
+const database = mongoose
+  .connect(`mongodb+srv://${user}:${pass}@${host}/${db}`, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+  })
+  .then(() => console.log('MongoDB Connected!'))
+  .catch(err => console.error('Falha ao conectar', err));
+
+export default database;
