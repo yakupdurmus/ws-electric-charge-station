@@ -16,7 +16,7 @@ async function connectToDatabase(uri) {
   return db;
 }
 
-(async () => {
+export default (async () => {
   const host = process.env.MONGODB_HOST;
   const user = process.env.MONGODB_USER;
   const pass = process.env.MONGODB_PASS;
