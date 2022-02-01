@@ -4,8 +4,7 @@
  <p align="center">DDD API example to deploy in Vercel(Typescript, Express. MongoDB, Domain-Driven Design)</p>
 </p>
 
-<p align="center">Did you like the project? Please, considerate <a href="https://github.com/hebertcisco/hebertcisco/blob/main/.github/patreon.md">being a supporter</a> and receive exclusive gifts!
- </p>
+<p align="center">Did you like the project? Please, considerate <a href="https://www.buymeacoffee.com/hebertcisco">being a supporter</a>!</p>
 
 ## Installation
 
