@@ -35,7 +35,7 @@
     "@types/helmet": "0.0.48",
     "@types/mongoose": "5.11.96",
     "@types/morgan": "1.9.3",
-    "@types/node": "16.11.18",
+    "@types/node": "16.11.22",
     "@vercel/node": "1.12.1",
     "eslint": "8.6.0",
     "eslint-config-airbnb-base": "15.0.0",
