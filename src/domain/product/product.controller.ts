@@ -1,10 +1,5 @@
 import productModel from './product.schema';
 import { Request, Response } from 'express';
-import runMiddleware from 'expmidd';
-import Cors from 'cors';
-const cors = Cors({
-  methods: ['GET'],
-});
 
 class ProductController {
   async create(req: Request, res: Response) {
@@ -19,7 +14,6 @@ class ProductController {
       brand,
       model,
     } = req.body;
-    await runMiddleware(req, res, cors);
 
     const product = await productModel.create({
       name,
@@ -38,7 +32,6 @@ class ProductController {
 
   async read(req: Request, res: Response) {
     const product = await productModel.find({});
-    await runMiddleware(req, res, cors);
     return res.status(200).json(product);
   }
 
@@ -69,14 +62,12 @@ class ProductController {
         model,
       }
     );
-    await runMiddleware(req, res, cors);
     return res.json(product);
   }
 
   async delete(req: Request, res: Response) {
     const { id } = req.params;
     const product = await productModel.deleteOne({ _id: id });
-    await runMiddleware(req, res, cors);
     return res.json(product);
   }
 }

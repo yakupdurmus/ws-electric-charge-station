@@ -3,20 +3,36 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 import mongoose from 'mongoose';
-mongoose.set('useFindAndModify', false);
-mongoose.set('useUnifiedTopology', true);
+import {
+  DEFAULT_MONGO_URL,
+  MONGODB_DATABASE,
+  MONGODB_HOST,
+  MONGODB_PASS,
+  MONGODB_USER,
+} from '../../shared/constants/database.constants';
 
-const host = process.env.MONGODB_HOST;
-const user = process.env.MONGODB_USER;
-const pass = process.env.MONGODB_PASS;
-const db = process.env.MONGODB_DATABASE;
+let MONGO_URL: string;
+
+switch (process.env.NODE_ENV) {
+  case 'development':
+    MONGO_URL = DEFAULT_MONGO_URL;
+    break;
+  case 'production':
+    MONGO_URL = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@${MONGODB_HOST}/${{
+      MONGODB_DATABASE,
+    }}`;
+    break;
+  default:
+    MONGO_URL = DEFAULT_MONGO_URL;
+    break;
+}
 
 const database = mongoose
-  .connect(`mongodb+srv://${user}:${pass}@${host}/${db}`, {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-  })
-  .then(() => console.log('MongoDB Connected!'))
-  .catch(err => console.error('Falha ao conectar', err));
+  .connect(MONGO_URL)
+  .then(() => process.stdout.write('MongoDB Connected!'))
+  .catch((err) => {
+    process.stdout.write(JSON.stringify(err));
+    process.exit(1);
+  });
 
 export default database;
