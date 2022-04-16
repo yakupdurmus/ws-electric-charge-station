@@ -18,9 +18,7 @@ switch (process.env.NODE_ENV) {
     MONGO_URL = DEFAULT_MONGO_URL;
     break;
   case 'production':
-    MONGO_URL = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@${MONGODB_HOST}/${{
-      MONGODB_DATABASE,
-    }}`;
+    MONGO_URL = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@${MONGODB_HOST}/${MONGODB_DATABASE}`;
     break;
   default:
     MONGO_URL = DEFAULT_MONGO_URL;
