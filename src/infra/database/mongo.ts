@@ -29,7 +29,7 @@ switch (process.env.NODE_ENV) {
 
 const database = mongoose
   .connect(MONGO_URL)
-  .then(() => process.stdout.write('MongoDB Connected!'))
+  .then(() => process.stdout.write('MongoDB Connected!\n'))
   .catch((err) => {
     process.stdout.write(JSON.stringify(err));
     process.exit(1);
