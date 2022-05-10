@@ -13,7 +13,7 @@ import {
 
 let MONGO_URL: string;
 
-switch (process.env.NODE_ENV) {
+switch (String(process.env.NODE_ENV)) {
   case 'development':
     MONGO_URL = DEFAULT_MONGO_URL;
     break;
