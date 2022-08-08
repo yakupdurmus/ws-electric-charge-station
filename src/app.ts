@@ -10,13 +10,13 @@ import * as Mongo from './infra/database';
 import Routes from './routes';
 
 class App {
-  express: express.Application;
+  public express: express.Application;
 
-  constructor() {
+  public constructor() {
     this.initialize();
   }
 
-  initialize() {
+  protected initialize(): void {
     this.express = express();
     this.express.use(cors());
     this.express.use(helmet());
