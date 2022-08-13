@@ -41,13 +41,13 @@
     "sucrase": "3.25.0",
     "typescript": "4.7.4"
   },
-  "description": "Vercel Typescript DDD api example",
+  "description": "REST API example to deploy in Vercel(Typescript, Express. MongoDB)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hebertcisco/vercel-typescript-ddd-api.git"
+    "url": "git+https://github.com/hebertcisco/vercel-typescript-rest-api.git"
   },
   "keywords": [
-    "vercel-typescript-ddd-api",
+    "vercel-typescript-rest-api",
     "node",
     "mongo",
     "express",
@@ -56,7 +56,7 @@
   ],
   "author": "Hebert F. Barros",
   "bugs": {
-    "url": "https://github.com/hebertcisco/vercel-typescript-ddd-api/issues"
+    "url": "https://github.com/hebertcisco/vercel-typescript-rest-api/issues"
   },
-  "homepage": "https://github.com/hebertcisco/vercel-typescript-ddd-api#readme"
+  "homepage": "https://github.com/hebertcisco/vercel-typescript-rest-api#readme"
 }
