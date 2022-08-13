@@ -1,7 +1,3 @@
-import * as dotenv from 'dotenv';
-
-dotenv.config();
-
 import mongoose from 'mongoose';
 import {
   DEFAULT_MONGO_URL,
@@ -25,7 +21,7 @@ switch (String(process.env.NODE_ENV)) {
     break;
 }
 
-const database = mongoose
+export const database = mongoose
   .connect(MONGO_URL)
   .then(() => process.stdout.write('MongoDB Connected!\n'))
   .catch((err) => {

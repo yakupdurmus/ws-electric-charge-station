@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { PRODUCT_MODEL_NAME } from './constants/product.constant';
 
 const ProductModel = new mongoose.Schema(
   {
@@ -11,7 +12,7 @@ const ProductModel = new mongoose.Schema(
       required: true,
     },
     quantity: {
-      type: String,
+      type: Number,
       required: true,
     },
     image: {
@@ -19,7 +20,7 @@ const ProductModel = new mongoose.Schema(
       required: true,
     },
     price: {
-      type: String,
+      type: Number,
       required: true,
     },
     description: {
@@ -48,4 +49,4 @@ const ProductModel = new mongoose.Schema(
   }
 );
 
-export default mongoose.model('product', ProductModel);
+export default mongoose.model(PRODUCT_MODEL_NAME, ProductModel);

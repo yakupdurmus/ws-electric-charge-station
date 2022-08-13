@@ -1,3 +1,1 @@
-import Mongo from './mongo';
-
-export { Mongo };
+export * from './mongo';

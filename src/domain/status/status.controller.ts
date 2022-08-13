@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
-class StatusController {
-  async show(req: Request, res: Response) {
+export class StatusController {
+  public async show(req: Request, res: Response) {
     res.status(200);
     res.json({
       status: 'online',

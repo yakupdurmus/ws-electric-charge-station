@@ -5,6 +5,7 @@ import ProductRouter from './domain/product/product.routes';
 
 const Routes = Router();
 
-Routes.use('/', DefaultRouter).use('/product', ProductRouter);
+Routes.use('/', DefaultRouter);
+Routes.use('/product', ProductRouter);
 
 export default Routes;
