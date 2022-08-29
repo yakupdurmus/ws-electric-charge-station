@@ -1,10 +1,10 @@
 import helmet from 'helmet';
-import * as cors from 'cors';
+import cors from 'cors';
 import * as bodyParser from 'body-parser';
 
-import * as express from 'express';
-import * as compression from 'compression';
-import * as morgan from 'morgan';
+import express from 'express';
+import compression from 'compression';
+import morgan from 'morgan';
 
 import * as Mongo from './infra/database';
 
