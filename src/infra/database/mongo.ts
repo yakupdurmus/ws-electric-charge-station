@@ -21,7 +21,7 @@ switch (String(process.env.NODE_ENV)) {
     break;
 }
 
-export const database = mongoose
+export const database = () => mongoose
   .connect(MONGO_URL)
   .then(() => process.stdout.write('MongoDB Connected!\n'))
   .catch((err) => {

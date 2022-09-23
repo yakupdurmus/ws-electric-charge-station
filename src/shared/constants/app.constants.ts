@@ -1,8 +1,9 @@
-export const PORT: number = Number(process.env.PORT) || 3000;
+import { configService } from 'nest-shared';
 
+export const PORT = configService.getPort() || 3000;
 export const BODY_PARSER_LIMIT: string =
-  process.env.BODY_PARSER_LIMIT || '15mb';
+  configService.getValue('BODY_PARSER_LIMIT', false) || '15mb';
 
 export const MORGAN_FORMAT: string =
-  process.env.MORGAN_FORMAT ||
+  configService.getValue('MORGAN_FORMAT', false) ||
   ':date[iso] HTTP/:http-version :method :url :status :response-time ms';
