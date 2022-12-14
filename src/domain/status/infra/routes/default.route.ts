@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import statusController from './status/status.controller';
+import statusController from '../controllers/status.controller';
 import type { Request, Response } from 'express';
 
 const DefaultRoute = Router();
