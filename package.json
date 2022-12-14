@@ -9,7 +9,6 @@
     "pre-prod": "rimraf dist && sucrase ./src -d ./dist --transforms typescript,imports",
     "dev": "nodemon src/server.ts",
     "prepare:enviroment": "node scripts/dev-enviroment.cjs",
-    "preprepare:enviroment": "npm run prepare:enviroment",
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "eslint src --fix --ext .js,.ts",
