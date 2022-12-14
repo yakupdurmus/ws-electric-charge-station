@@ -30,6 +30,8 @@ npm run prepare:enviroment
 npm run dev
 ```
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/hebertcisco/vercel-typescript-express-api/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/hebertcisco/vercel-typescript-express-api/tree/main)
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](issues).
