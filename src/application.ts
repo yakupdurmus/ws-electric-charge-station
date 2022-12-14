@@ -6,7 +6,7 @@ import express from 'express';
 import compression from 'compression';
 import morgan from 'morgan';
 
-import  {database} from './infra/database';
+import { database } from './infra/database';
 
 import Routes from './routes';
 
