@@ -1,5 +1,5 @@
 {
-  "name": "vercel-typescript-rest-api",
+  "name": "vercel-typescript-express-api",
   "version": "0.0.1",
   "main": "src/server.ts",
   "license": "MIT",
@@ -45,10 +45,10 @@
   "description": "REST API example to deploy in Vercel(Typescript, Express. MongoDB)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hebertcisco/vercel-typescript-rest-api.git"
+    "url": "git+https://github.com/hebertcisco/vercel-typescript-express-api.git"
   },
   "keywords": [
-    "vercel-typescript-rest-api",
+    "vercel-typescript-express-api",
     "node",
     "mongo",
     "express",
@@ -57,7 +57,7 @@
   ],
   "author": "Hebert F. Barros",
   "bugs": {
-    "url": "https://github.com/hebertcisco/vercel-typescript-rest-api/issues"
+    "url": "https://github.com/hebertcisco/vercel-typescript-express-api/issues"
   },
-  "homepage": "https://github.com/hebertcisco/vercel-typescript-rest-api#readme"
+  "homepage": "https://github.com/hebertcisco/vercel-typescript-express-api#readme"
 }
