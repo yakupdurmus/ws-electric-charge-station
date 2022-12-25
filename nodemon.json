@@ -4,6 +4,6 @@
   ],
   "ext": "ts",
   "execMap": {
-    "ts": "sucrase-node src/server.ts"
+    "ts": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts"
   }
 }
