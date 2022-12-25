@@ -6,6 +6,8 @@
 
 <p align="center">Did you like the project? Please, considerate <a href="https://www.buymeacoffee.com/hebertcisco">being a supporter</a>!</p>
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/hebertcisco/vercel-typescript-express-api/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/hebertcisco/vercel-typescript-express-api/tree/main)
+
 ## Installation
 
 > Clone this repository: `git clone https://github.com/hebertcisco/vercel-typescript-express-api`
@@ -30,8 +32,6 @@ npm run prepare:enviroment
 npm run dev
 ```
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/hebertcisco/vercel-typescript-express-api/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/hebertcisco/vercel-typescript-express-api/tree/main)
-
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](issues).
@@ -48,5 +48,5 @@ Or buy me a coffee 🙌🏾
 
 ## 📝 License
 
-Copyright © 2022 [Hebert F Barros](https://github.com/hebertcisco).<br />
+Copyright © 2023 [Hebert F Barros](https://github.com/hebertcisco).<br />
 This project is [MIT](LICENSE) licensed.
