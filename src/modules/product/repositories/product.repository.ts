@@ -1,7 +1,7 @@
-import productModel from './product.schema';
-import type { ProductInterface } from './interfaces/product.interface';
+import productModel from '../product.schema';
+import type { ProductInterface } from '../interfaces/product.interface';
 
-export class ProductService {
+export class ProductRepository {
   public async create(body: ProductInterface) {
     try {
       const product = await productModel.create({
@@ -16,7 +16,7 @@ export class ProductService {
     }
   }
 
-  public async read() {
+  public async findAll() {
     const product = await productModel.find();
     if (!product) {
       return Promise.resolve([]);
@@ -53,4 +53,4 @@ export class ProductService {
     }
   }
 }
-export default new ProductService();
+export default ProductRepository;

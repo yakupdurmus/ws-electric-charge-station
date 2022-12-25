@@ -1,17 +1,24 @@
 import type { Request, Response } from 'express';
-import { ProductService } from './product.service';
+
+import CreateProductService from './services/create-product.service';
+import FindProductService from './services/find-product.service';
+import UpdateProductService from './services/update-product.service';
+import DeleteProductService from './services/delete-product.service';
+
+import { ProductRepository } from './repositories/product.repository';
+
 import type { ProductInterface } from './interfaces/product.interface';
 
 export class ProductController {
-  private productService: ProductService;
-  public constructor() {
-    this.productService = new ProductService();
-  }
+  private productRepository: ProductRepository = new ProductRepository();
+
   public async create(req: Request, res: Response) {
     const body: ProductInterface = req.body;
-
+    const createProductService = new CreateProductService(
+      this.productRepository
+    );
     try {
-      const product = await this.productService.create({
+      const product = await createProductService.execute({
         ...body,
       });
       if (product instanceof Error) {
@@ -27,8 +34,9 @@ export class ProductController {
   }
 
   public async read(req: Request, res: Response) {
+    const findProductService = new FindProductService(this.productRepository);
     try {
-      const product = await this.productService.read();
+      const product = await findProductService.execute();
       if (product instanceof Error) {
         return Promise.reject(res.status(400).json(product));
       }
@@ -45,8 +53,11 @@ export class ProductController {
     const { id } = req.params;
     const body: ProductInterface = req.body;
 
+    const updateProductService = new UpdateProductService(
+      this.productRepository
+    );
     try {
-      const product = await this.productService.update(id, {
+      const product = await updateProductService.execute(id, {
         ...body,
       });
       if (product instanceof Error) {
@@ -63,8 +74,12 @@ export class ProductController {
 
   public async delete(req: Request, res: Response) {
     const { id } = req.params;
+
+    const deleteProductService = new DeleteProductService(
+      this.productRepository
+    );
     try {
-      const product = await this.productService.delete(id);
+      const product = await deleteProductService.execute(id);
       if (product instanceof Error) {
         return Promise.reject(res.status(400).json(product));
       }
