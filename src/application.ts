@@ -16,7 +16,7 @@ import {
 } from './shared/constants/app.constants';
 
 export class Application {
-  public express: express.Application;
+  public express!: express.Application;
 
   constructor() {
     this.initialize()
