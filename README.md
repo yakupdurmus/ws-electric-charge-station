@@ -45,22 +45,22 @@ curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/
 curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/product'
 ```
 
-### [Get a product `/product/:productId`](https://vercel-typescript-express-api.vercel.app/product/83dd27e0-0fe6-49d4-9bab-7915ac6f7f10)
+### [Get a product `/product/:productId`](https://vercel-typescript-express-api.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871)
 
 ```bash
-curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/product/83dd27e0-0fe6-49d4-9bab-7915ac6f7f10'
+curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871'
 ```
 
 ### Delete a product`/product/:productId`
 
 ```bash
-curl --location --request DELETE 'https://vercel-typescript-express-api.vercel.app/product/83dd27e0-0fe6-49d4-9bab-7915ac6f7f10'
+curl --location --request DELETE 'https://vercel-typescript-express-api.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871'
 ```
 
 ### Update a product `/product/:productId`
 
 ```bash
-curl --location --request PUT 'https://vercel-typescript-express-api.vercel.app/product/83dd27e0-0fe6-49d4-9bab-7915ac6f7f10' \
+curl --location --request PUT 'https://vercel-typescript-express-api.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "Apple iPhone 11 (64 GB) (PRODUCT) RED",
@@ -75,7 +75,7 @@ curl --location --request PUT 'https://vercel-typescript-express-api.vercel.app/
 }'
 ```
 
-### Create a product `/product/:productId`
+### Create a product `/product`
 
 ```bash
 curl --location --request POST 'https://vercel-typescript-express-api.vercel.app/product' \
