@@ -1,13 +1,13 @@
 import type { Request, Response } from 'express';
 
-import CreateProductService from './services/create-product.service';
-import FindProductService from './services/find-product.service';
-import UpdateProductService from './services/update-product.service';
-import DeleteProductService from './services/delete-product.service';
+import CreateProductService from '../../../services/create-product.service';
+import FindProductService from '../../../services/find-product.service';
+import UpdateProductService from '../../../services/update-product.service';
+import DeleteProductService from '../../../services/delete-product.service';
 
-import { ProductRepository } from './repositories/product.repository';
+import { ProductRepository } from '../../../repositories/product.repository';
 
-import type { ProductInterface } from './interfaces/product.interface';
+import type { ProductInterface } from '../../../interfaces/product.interface';
 
 export class ProductController {
   private productRepository: ProductRepository = new ProductRepository();

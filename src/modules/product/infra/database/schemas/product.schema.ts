@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { PRODUCT_MODEL_NAME } from './constants/product.constant';
+import { PRODUCT_MODEL_NAME } from '../../../constants/product.constant';
 
 const ProductModel = new mongoose.Schema(
   {

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import DefaultRouter from './modules/status/infra/routes/default.route';
-import ProductRouter from './modules/product/product.routes';
+import ProductRouter from './modules/product/infra/http/routes/product.routes';
 
 const Routes = Router();
 

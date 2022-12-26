@@ -1,4 +1,4 @@
-import productModel from '../product.schema';
+import productModel from '../infra/database/schemas/product.schema';
 import type { ProductInterface } from '../interfaces/product.interface';
 
 export class ProductRepository {
