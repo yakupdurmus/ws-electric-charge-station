@@ -3,17 +3,13 @@ import type { ProductInterface } from '../../../contract/interfaces/product.inte
 
 export class ProductRepository {
   public async create(body: ProductInterface) {
-    try {
-      const product = await productModel.create({
-        ...body,
-      });
-      if (!product) {
-        return Promise.reject(new Error('Product not created!'));
-      }
-      return product;
-    } catch (error) {
-      throw error;
+    const product = await productModel.create({
+      ...body,
+    });
+    if (!product) {
+      return Promise.reject(new Error('Product not created!'));
     }
+    return product;
   }
 
   public async findAll() {
@@ -25,32 +21,24 @@ export class ProductRepository {
   }
 
   public async update(id: string, body: ProductInterface) {
-    try {
-      const product = await productModel.findOneAndUpdate(
-        { _id: id },
-        {
-          ...body,
-        }
-      );
-      if (!product) {
-        return Promise.reject(new Error('Product not updated!'));
+    const product = await productModel.findOneAndUpdate(
+      { _id: id },
+      {
+        ...body,
       }
-      return product;
-    } catch (error) {
-      throw error;
+    );
+    if (!product) {
+      return Promise.reject(new Error('Product not updated!'));
     }
+    return product;
   }
 
   public async delete(id: string) {
-    try {
-      const product = await productModel.deleteOne({ _id: id });
-      if (!product) {
-        return Promise.reject(new Error('Product not deleted!'));
-      }
-      return product;
-    } catch (error) {
-      throw error;
+    const product = await productModel.deleteOne({ _id: id });
+    if (!product) {
+      return Promise.reject(new Error('Product not deleted!'));
     }
+    return product;
   }
 }
 export default ProductRepository;
