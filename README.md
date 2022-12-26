@@ -33,19 +33,19 @@ npm run dev
 ```
 ## Calling the API
 
-### Get status `/` 
+### [Get status `/`](https://vercel-typescript-express-api.vercel.app/)
 
 ```bash
 curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/'
 ```
 
-### Get all product `/product`
+### [Get all product `/product`](https://vercel-typescript-express-api.vercel.app/product)
 
 ```bash
 curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/product'
 ```
 
-### Get a product `/product/:productId`
+### [Get a product `/product/:productId`](https://vercel-typescript-express-api.vercel.app/product/83dd27e0-0fe6-49d4-9bab-7915ac6f7f10)
 
 ```bash
 curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/product/83dd27e0-0fe6-49d4-9bab-7915ac6f7f10'
