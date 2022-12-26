@@ -6,6 +6,8 @@ import { UpdateProductService } from '../../../services/update-product.service';
 import { DeleteProductService } from '../../../services/delete-product.service';
 import { FindOneProductService } from '../../../services/find-one-product.service';
 
+import { HttpStatus } from '../../../../../shared/enums/http-status.enum';
+
 import { productRepositoryInstance } from '../../database/repositories';
 
 import type { ProductInterface } from '../../../contract/interfaces/product.interface';
@@ -21,12 +23,12 @@ export class ProductController {
         ...body,
       });
 
-      return res.status(201).json(product);
+      return res.status(HttpStatus.CREATED).json(product);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
       }
-      throw res.status(500).json(error);
+      throw res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error);
     }
   }
 
@@ -37,12 +39,12 @@ export class ProductController {
     try {
       const product = await findAllProductService.execute();
 
-      return res.status(200).json(product);
+      return res.status(HttpStatus.OK).json(product);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
       }
-      throw res.status(500).json(error);
+      throw res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error);
     }
   }
   public async findOne(req: Request, res: Response) {
@@ -54,12 +56,12 @@ export class ProductController {
     try {
       const product = await findOneProductService.execute(id);
 
-      return res.status(200).json(product);
+      return res.status(HttpStatus.OK).json(product);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
       }
-      throw res.status(500).json(error);
+      throw res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error);
     }
   }
   public async update(req: Request, res: Response) {
@@ -70,16 +72,16 @@ export class ProductController {
       productRepositoryInstance
     );
     try {
-      const product = await updateProductService.execute(id, {
+      await updateProductService.execute(id, {
         ...body,
       });
 
-      return res.status(200).json(product);
+      return res.status(HttpStatus.NO_CONTENT);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
       }
-      throw res.status(500).json(error);
+      throw res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error);
     }
   }
 
@@ -92,12 +94,12 @@ export class ProductController {
     try {
       const product = await deleteProductService.execute(id);
 
-      return res.status(200).json(product);
+      return res.status(HttpStatus.OK).json(product);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
       }
-      throw res.status(500).json(error);
+      throw res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error);
     }
   }
 }
