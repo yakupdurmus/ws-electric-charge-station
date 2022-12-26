@@ -2,6 +2,9 @@ import crypto from 'node:crypto';
 
 import productModel from '../../models/product.model';
 
+import { HttpException } from '../../../../../../shared/helpers/errors/HttpException';
+import { HttpStatus } from '../../../../../../shared/enums/http-status.enum';
+
 import type { ProductInterface } from '../../../../contract/interfaces/product.interface';
 
 export class ProductRepository {
@@ -11,7 +14,7 @@ export class ProductRepository {
       _id: crypto.randomUUID(),
     });
     if (!product) {
-      return Promise.reject(new Error('Product not created!'));
+      throw new HttpException('Product not created!', HttpStatus.BAD_REQUEST);
     }
     return product;
   }
@@ -26,7 +29,7 @@ export class ProductRepository {
   public async findOne(id: string) {
     const product = await productModel.findOne({ _id: id });
     if (!product) {
-      return Promise.reject(new Error('Product not found!'));
+      throw new HttpException('Product not found!', HttpStatus.NOT_FOUND);
     }
 
     return product;
@@ -40,7 +43,7 @@ export class ProductRepository {
       }
     );
     if (!product) {
-      return Promise.reject(new Error('Product not updated!'));
+      throw new HttpException('Product not updated!', HttpStatus.BAD_REQUEST);
     }
     return product;
   }
@@ -49,7 +52,7 @@ export class ProductRepository {
     const product = await this.findOne(id);
     const deletedProduct = await productModel.deleteOne({ _id: id });
     if (!deletedProduct) {
-      return Promise.reject(new Error('Product not deleted!'));
+      throw new HttpException('Product not deleted!', HttpStatus.BAD_REQUEST);
     }
     return product;
   }

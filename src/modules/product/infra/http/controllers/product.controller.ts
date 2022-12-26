@@ -20,10 +20,8 @@ export class ProductController {
       const product = await createProductService.execute({
         ...body,
       });
-      if (product instanceof Error) {
-        return Promise.reject(res.status(400).json(product));
-      }
-      return Promise.resolve(res.status(201).json(product));
+
+      return res.status(201).json(product);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
@@ -38,10 +36,8 @@ export class ProductController {
     );
     try {
       const product = await findAllProductService.execute();
-      if (product instanceof Error) {
-        return Promise.reject(res.status(400).json(product));
-      }
-      return Promise.resolve(res.status(200).json(product));
+
+      return res.status(200).json(product);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
@@ -57,10 +53,8 @@ export class ProductController {
     );
     try {
       const product = await findOneProductService.execute(id);
-      if (product instanceof Error) {
-        return Promise.reject(res.status(400).json(product));
-      }
-      return Promise.resolve(res.status(200).json(product));
+
+      return res.status(200).json(product);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
@@ -79,10 +73,8 @@ export class ProductController {
       const product = await updateProductService.execute(id, {
         ...body,
       });
-      if (product instanceof Error) {
-        return Promise.reject(res.status(400).json(product));
-      }
-      return Promise.resolve(res.status(200).json(product));
+
+      return res.status(200).json(product);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
@@ -99,10 +91,8 @@ export class ProductController {
     );
     try {
       const product = await deleteProductService.execute(id);
-      if (product instanceof Error) {
-        return Promise.reject(res.status(400).json(product));
-      }
-      return Promise.resolve(res.status(200).json(product));
+
+      return res.status(200).json(product);
     } catch (error) {
       if (error instanceof Error) {
         throw error;
