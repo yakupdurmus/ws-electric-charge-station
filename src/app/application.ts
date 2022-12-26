@@ -28,6 +28,8 @@ export class Application {
   }
 
   protected async initialize(): Promise<void> {
+    await database();
+
     this.express = express();
     this.express.use(cors());
     this.express.use(helmet());
@@ -38,7 +40,6 @@ export class Application {
     );
     this.express.use(morgan(MORGAN_FORMAT));
     this.express.use(Routes);
-    await database();
   }
 }
 
