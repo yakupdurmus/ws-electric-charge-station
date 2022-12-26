@@ -1,4 +1,4 @@
-import { ProductRepository } from '../infra/database/repositories/product.repository';
+import { ProductRepository } from '../infra/database/repositories/implementations/product.repository';
 import type { ProductInterface } from '../contract/interfaces/product.interface';
 
 export class CreateProductService {

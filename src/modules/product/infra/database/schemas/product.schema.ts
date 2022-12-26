@@ -1,52 +1,55 @@
-import mongoose from 'mongoose';
-import { PRODUCT_MODEL_NAME } from '../../../shared/constants/product.constant';
+import { Schema } from 'mongoose';
 
-const ProductModel = new mongoose.Schema(
+const SchemaTypes = Schema.Types;
+
+const ProductSchema = new Schema(
   {
+    _id: {
+      type: SchemaTypes.String,
+      required: true,
+    },
     name: {
-      type: String,
+      type: SchemaTypes.String,
       required: true,
     },
     slug: {
-      type: String,
+      type: SchemaTypes.String,
       required: true,
     },
     quantity: {
-      type: Number,
+      type: SchemaTypes.Number,
       required: true,
     },
     image: {
-      type: String,
+      type: SchemaTypes.String,
       required: true,
     },
     price: {
-      type: Number,
+      type: SchemaTypes.Number,
       required: true,
     },
     description: {
-      type: String,
+      type: SchemaTypes.String,
       required: true,
     },
     guarantee: {
-      type: String,
-      required: true,
-    },
-    href: {
-      type: String,
+      type: SchemaTypes.String,
       required: true,
     },
     brand: {
-      type: String,
+      type: SchemaTypes.String,
       required: true,
     },
     model: {
-      type: String,
+      type: SchemaTypes.String,
       required: true,
     },
   },
   {
-    timestamps: false,
+    timestamps: true,
+    versionKey: false,
+    autoCreate: true,
   }
 );
 
-export default mongoose.model(PRODUCT_MODEL_NAME, ProductModel);
+export default ProductSchema;

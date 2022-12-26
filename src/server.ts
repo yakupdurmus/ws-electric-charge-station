@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import 'reflect-metadata';
 
 import application from './app/application';
 import { PORT } from './shared/constants/app.constants';

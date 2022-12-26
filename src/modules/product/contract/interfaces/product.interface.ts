@@ -9,3 +9,6 @@ export interface ProductInterface {
   brand: string;
   model: string;
 }
+export interface CreateProductInterface extends ProductInterface {
+  id: string;
+}
