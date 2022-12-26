@@ -1,5 +1,5 @@
-import productModel from '../infra/database/schemas/product.schema';
-import type { ProductInterface } from '../interfaces/product.interface';
+import productModel from '../schemas/product.schema';
+import type { ProductInterface } from '../../../contract/interfaces/product.interface';
 
 export class ProductRepository {
   public async create(body: ProductInterface) {

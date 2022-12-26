@@ -6,14 +6,14 @@ import express from 'express';
 import compression from 'compression';
 import morgan from 'morgan';
 
-import { database } from './infra/database';
+import { database } from '../infra/database';
 
-import Routes from './routes';
+import Routes from '../infra/http/routes/routes';
 
 import {
   BODY_PARSER_LIMIT,
   MORGAN_FORMAT,
-} from './shared/constants/app.constants';
+} from '../shared/constants/app.constants';
 
 export class Application {
   public express!: express.Application;

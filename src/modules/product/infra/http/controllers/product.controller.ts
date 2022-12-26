@@ -5,9 +5,9 @@ import FindProductService from '../../../services/find-product.service';
 import UpdateProductService from '../../../services/update-product.service';
 import DeleteProductService from '../../../services/delete-product.service';
 
-import { ProductRepository } from '../../../repositories/product.repository';
+import { ProductRepository } from '../../database/repositories/product.repository';
 
-import type { ProductInterface } from '../../../interfaces/product.interface';
+import type { ProductInterface } from '../../../contract/interfaces/product.interface';
 
 export class ProductController {
   private productRepository: ProductRepository = new ProductRepository();

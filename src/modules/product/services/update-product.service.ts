@@ -1,5 +1,5 @@
-import { ProductRepository } from '../repositories/product.repository';
-import type { ProductInterface } from '../interfaces/product.interface';
+import { ProductRepository } from '../infra/database/repositories/product.repository';
+import type { ProductInterface } from '../contract/interfaces/product.interface';
 
 export class UpdateProductService {
   public constructor(private readonly productRepository: ProductRepository) {}

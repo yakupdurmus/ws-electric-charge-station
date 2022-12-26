@@ -1,4 +1,4 @@
-import { ProductRepository } from '../repositories/product.repository';
+import { ProductRepository } from '../infra/database/repositories/product.repository';
 
 export class DeleteProductService {
   public constructor(private readonly productRepository: ProductRepository) {}

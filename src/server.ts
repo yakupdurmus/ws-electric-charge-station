@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-import application from './application';
+import application from './app/application';
 import { PORT } from './shared/constants/app.constants';
 
 ((): void => {
