@@ -7,23 +7,18 @@ import {
   MONGODB_USER,
 } from '../../shared/constants/database.constants';
 
-let MONGO_URL: string;
+const connectionString = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@${MONGODB_HOST}/${MONGODB_DATABASE}`;
 
-switch (String(process.env.NODE_ENV)) {
-  case 'development':
-    MONGO_URL = DEFAULT_MONGO_URL;
-    break;
-  case 'production':
-    MONGO_URL = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@${MONGODB_HOST}/${MONGODB_DATABASE}`;
-    break;
-  default:
-    MONGO_URL = DEFAULT_MONGO_URL;
-    break;
-}
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  poolSize: 10, // use a connection pool with a size of 10 connections
+  keepAlive: true, // use a connection keep-alive
+};
 
 export const database = () =>
   mongoose
-    .connect(MONGO_URL)
+    .connect(connectionString, options)
     .then(() => process.stdout.write('MongoDB Connected!\n'))
     .catch((err) => {
       process.stdout.write(JSON.stringify(err));
