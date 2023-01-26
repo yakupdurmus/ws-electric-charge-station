@@ -17,7 +17,10 @@ mongoose.set('strictQuery', true);
 export const database = () =>
   mongoose
     .connect(connectionString, options)
-    .then(() => process.stdout.write('MongoDB Connected!\n'))
+    .then((connection) => {
+      process.stdout.write('MongoDB Connected!\n');
+      return connection;
+    })
     .catch((err) => {
       process.stdout.write(JSON.stringify(err));
       process.exit(1);

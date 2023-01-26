@@ -16,20 +16,13 @@ import {
 } from '../shared/constants/app.constants';
 
 export class Application {
-  public express: express.Application = express();
+  public express!: express.Application;
 
-  constructor() {
-    this.initialize()
-      .then(() => process.stdout.write('Server started\n'))
-      .catch((err) => {
-        process.stderr.write(err.message);
-        process.exit(1);
-      });
+  public constructor() {
+    this.initialize();
   }
 
-  protected async initialize(): Promise<void> {
-    await database();
-
+  protected initialize(): void {
     this.express = express();
     this.express.use(cors());
     this.express.use(helmet());
@@ -40,6 +33,10 @@ export class Application {
     );
     this.express.use(morgan(MORGAN_FORMAT));
     this.express.use(Routes);
+    this.connectDatabase();
+  }
+  async connectDatabase(): Promise<void> {
+    await database();
   }
 }
 
