@@ -1,4 +1,5 @@
-const express = require("express");
+import express from "express";
+import connection from "./dbconnection";
 const router = express.Router();
 
 /**
@@ -8,9 +9,10 @@ const router = express.Router();
  */
 router.get("/", async (req, res) => {
   try {
+    const user = await connection.select("*").table("user");
     res.json({
       status: 200,
-      message: "Get data has successfullytest",
+      data: user,
     });
   } catch (error) {
     console.error(error);
