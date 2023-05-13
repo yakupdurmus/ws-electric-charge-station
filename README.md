@@ -1,21 +1,21 @@
 <p align="center">
- <img width="100px" src="https://raw.githubusercontent.com/hebertcisco/vercel-typescript-express-api/cebd0c563141a4cc7d279997b8cb5dd9232d7591/.github/images/favicon512x512-vercel-typescript-express-api.png" align="center" alt=":package: vercel-typescript-express-api" />
- <h2 align="center">:package: vercel-typescript-express-api</h2>
+ <img width="100px" src="https://raw.githubusercontent.com/hebertcisco/ws-electric-charge-station/cebd0c563141a4cc7d279997b8cb5dd9232d7591/.github/images/favicon512x512-ws-electric-charge-station.png" align="center" alt=":package: ws-electric-charge-station" />
+ <h2 align="center">:package: ws-electric-charge-station</h2>
  <p align="center">Rest API example to deploy in Vercel(Typescript, Express. MongoDB)</p>
 </p>
 
 <p align="center">Did you like the project? Please, considerate <a href="https://www.buymeacoffee.com/hebertcisco">being a supporter</a>!</p>
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/hebertcisco/vercel-typescript-express-api/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/hebertcisco/vercel-typescript-express-api/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/hebertcisco/ws-electric-charge-station/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/hebertcisco/ws-electric-charge-station/tree/main)
 
 ## Installation
 
-> Clone this repository: `git clone https://github.com/hebertcisco/vercel-typescript-express-api`
+> Clone this repository: `git clone https://github.com/hebertcisco/ws-electric-charge-station`
 
 ### Open the directory and install the dependencies
 
 ```bash
-cd vercel-typescript-express-api
+cd ws-electric-charge-station
 npm install
 ```
 
@@ -33,34 +33,34 @@ npm run dev
 ```
 ## Calling the API
 
-### [Get status `/`](https://vercel-typescript-express-api.vercel.app/)
+### [Get status `/`](https://ws-electric-charge-station.vercel.app/)
 
 ```bash
-curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/'
+curl --location --request GET 'https://ws-electric-charge-station.vercel.app/'
 ```
 
-### [Get all product `/product`](https://vercel-typescript-express-api.vercel.app/product)
+### [Get all product `/product`](https://ws-electric-charge-station.vercel.app/product)
 
 ```bash
-curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/product'
+curl --location --request GET 'https://ws-electric-charge-station.vercel.app/product'
 ```
 
-### [Get a product `/product/:productId`](https://vercel-typescript-express-api.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871)
+### [Get a product `/product/:productId`](https://ws-electric-charge-station.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871)
 
 ```bash
-curl --location --request GET 'https://vercel-typescript-express-api.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871'
+curl --location --request GET 'https://ws-electric-charge-station.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871'
 ```
 
 ### Delete a product`/product/:productId`
 
 ```bash
-curl --location --request DELETE 'https://vercel-typescript-express-api.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871'
+curl --location --request DELETE 'https://ws-electric-charge-station.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871'
 ```
 
 ### Update a product `/product/:productId`
 
 ```bash
-curl --location --request PUT 'https://vercel-typescript-express-api.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871' \
+curl --location --request PUT 'https://ws-electric-charge-station.vercel.app/product/a328cbb5-9663-4470-88c2-2ac9cc5c4871' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "Apple iPhone 11 (64 GB) (PRODUCT) RED",
@@ -78,7 +78,7 @@ curl --location --request PUT 'https://vercel-typescript-express-api.vercel.app/
 ### Create a product `/product`
 
 ```bash
-curl --location --request POST 'https://vercel-typescript-express-api.vercel.app/product' \
+curl --location --request POST 'https://ws-electric-charge-station.vercel.app/product' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "Apple iPhone 11 (64 GB) (PRODUCT) RED",

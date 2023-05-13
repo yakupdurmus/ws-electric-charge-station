@@ -1,5 +1,5 @@
 {
-  "name": "vercel-typescript-express-api",
+  "name": "ws-electric-charge-station",
   "version": "0.0.2",
   "description": "REST API example to deploy in Vercel(Typescript, Express. MongoDB)",
   "main": "dist/server.js",
@@ -66,10 +66,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hebertcisco/vercel-typescript-express-api.git"
+    "url": "git+https://github.com/hebertcisco/ws-electric-charge-station.git"
   },
   "keywords": [
-    "vercel-typescript-express-api",
+    "ws-electric-charge-station",
     "node",
     "mongo",
     "express",
@@ -78,7 +78,7 @@
   ],
   "author": "Hebert F. Barros",
   "bugs": {
-    "url": "https://github.com/hebertcisco/vercel-typescript-express-api/issues"
+    "url": "https://github.com/hebertcisco/ws-electric-charge-station/issues"
   },
-  "homepage": "https://github.com/hebertcisco/vercel-typescript-express-api#readme"
+  "homepage": "https://github.com/hebertcisco/ws-electric-charge-station#readme"
 }
