@@ -2,15 +2,15 @@
   "name": "ws-electric-charge-station",
   "version": "0.0.2",
   "description": "REST API example to deploy in Vercel(Typescript, Express. MongoDB)",
-  "main": "dist/server.js",
-  "types": "dist/server.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
     "pre-prod": "rimraf dist && npm run build",
-    "dev": "nodemon --watch src --exec ts-node src/server.ts",
-    "prod": "nodemon --watch src --exec ts-node server.js",
+    "dev": "nodemon --watch src --exec ts-node src/index.ts",
+    "prod": "nodemon --watch src --exec ts-node index.js",
     "predev": "npm run build",
     "prepare:enviroment": "node scripts/dev-enviroment.cjs",
     "format": "prettier --write \"src/**/*.(js|ts)\"",
@@ -74,7 +74,7 @@
     "mongo",
     "express",
     "javascript",
-    "server"
+    "index"
   ],
   "author": "Hebert F. Barros",
   "bugs": {
